@@ -6,13 +6,13 @@
 
 static int simple_init(void)
 {
-       printk(KERN_INFO "HZ: %d\nJiffies: %d\n", HZ, jiffies);
+       printk(KERN_INFO "HZ: %d\nJiffies: %lu\n", HZ, jiffies);
        return 0;
 }
 
 
 static void simple_exit(void) {
-	printk(KERN_INFO "Jiffies: %d\n", jiffies);
+	printk(KERN_INFO "Jiffies: %lu\n", jiffies);
 }
 
 module_init( simple_init );
