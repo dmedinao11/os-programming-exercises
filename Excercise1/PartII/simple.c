@@ -6,14 +6,14 @@
 
 static int simple_init(void)
 {
-       printk(KERN INFO "%lu∖n", GOLDEN RATIO PRIME);
+       printk(KERN_INFO "%lu\n", GOLDEN_RATIO_PRIME);
        return 0;
 }
 
 
 static void simple_exit(void) {
 	unsigned long result = gcd(3300, 24);
-	printk(KERN_INFO "gcd(3300, 24) = %lu∖n", result);
+	printk(KERN_INFO "gcd(3300, 24) = %lu\n", result);
 }
 
 module_init( simple_init );
