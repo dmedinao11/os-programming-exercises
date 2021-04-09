@@ -3,3 +3,7 @@
 *.symvers
 *.mod.o
 *.o
+.DS_Store
+a.out
+*.class
+*.cmd
