@@ -1,1 +1,0 @@
-cmd_/home/osc/ejercicio/os-programming-exercises/Excercise1/PartI/simple.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/osc/ejercicio/os-programming-exercises/Excercise1/PartI/simple.ko /home/osc/ejercicio/os-programming-exercises/Excercise1/PartI/simple.o /home/osc/ejercicio/os-programming-exercises/Excercise1/PartI/simple.mod.o
