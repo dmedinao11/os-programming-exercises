@@ -32,17 +32,7 @@ int main(void) {
             {4, 9, 6, 1, 8, 2, 5, 7, 3},
             {2, 8, 5, 4, 7, 3, 9, 1, 6}
      };
-    steady_clock::time_point start_time_single_thread = steady_clock::now();
 
-    if(sudoku_checker(sudoku))
-        printf("Con un solo hilo: Solución INCORRECTA del sudoku\n");
-    else
-        printf("Con un solo hilo: Solución CORRECTA del sudoku\n");
-
-    steady_clock::time_point end_time_single_thread = steady_clock::now();
-
-    duration<double> elapsed_time_single_thread = duration_cast<duration<double>>(end_time_single_thread - start_time_single_thread);
-    cout << endl << "Tiempo total usando un solo hilo: " << elapsed_time_single_thread.count() << " segundos" << endl << endl;
     steady_clock::time_point start_time_threads = steady_clock::now();
     pthread_t threads[num_threads];
     int threadIndex = 0;
@@ -87,6 +77,18 @@ int main(void) {
     steady_clock::time_point end_time_threads = steady_clock::now();
     duration<double> elapsed_time_threads = duration_cast<duration<double>>(end_time_threads - start_time_threads);
     cout << endl << "Tiempo total utilizando 27 hilos: " << elapsed_time_threads.count() << " segundos" << endl;
+	
+    steady_clock::time_point start_time_single_thread = steady_clock::now();
+
+    if(sudoku_checker(sudoku))
+        printf("Con un solo hilo: Solución INCORRECTA del sudoku\n");
+    else
+        printf("Con un solo hilo: Solución CORRECTA del sudoku\n");
+
+    steady_clock::time_point end_time_single_thread = steady_clock::now();
+
+    duration<double> elapsed_time_single_thread = duration_cast<duration<double>>(end_time_single_thread - start_time_single_thread);
+    cout << endl << "Tiempo total usando un solo hilo: " << elapsed_time_single_thread.count() << " segundos" << endl << endl;	
 }
 
 void *check_grid(void * params) {
