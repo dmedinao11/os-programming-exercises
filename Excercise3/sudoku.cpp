@@ -177,6 +177,8 @@ int check_grid(int sudoku[9][9]) {
 }
 
 int sudoku_checker(int sudoku[9][9]) {
+	if(check_grid(sudoku))
+            return 1;
     for (int i=0; i<9; i++) {
         if(check_line(sudoku[i]))
             return 1;
@@ -185,8 +187,7 @@ int sudoku_checker(int sudoku[9][9]) {
             check_col[j] = sudoku[i][j];
         if(check_line(check_col))
             return 1;
-        if(check_grid(sudoku))
-            return 1;
     }
+	
     return 0;
 }
